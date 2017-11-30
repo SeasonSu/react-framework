@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
-import PreviewList, {loadArticles} from './MineLoginActions'
+import list, {loadArticles} from './MineLoginActions'
 
-export default combineReducers({PreviewList})
+export default combineReducers({list})
 
 export const actions = {
   loadArticles
