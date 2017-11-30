@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import './MineLoginView.scss'
+import './view.scss'
 
 @connect(state => {
   console.log(state);
@@ -8,7 +8,7 @@ import './MineLoginView.scss'
 }, dispatch => {
   return {}
 })
-class MineLoginView extends React.Component {
+class View extends React.Component {
   render() {
     return (
       <div styleName='foo'>Login</div>
@@ -16,4 +16,4 @@ class MineLoginView extends React.Component {
   }
 }
 
-export default MineLoginView
+export default View

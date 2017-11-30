@@ -7,8 +7,6 @@ import rootReducer from './reducers'
 
 const finalCreateStore = compose(applyMiddleware(ThunkMiddleware))(createStore)
 
-console.log('rootReducer', rootReducer);
-
 const reducer = combineReducers({
   ...rootReducer,
   routing: routerReducer

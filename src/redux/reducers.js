@@ -1,7 +1,5 @@
 // 引入所有的reducer
-import * as modules from '../views/**/*Reducer.js'
-
-console.log('modules', modules);
+import * as modules from '../views/**/*reducer.js'
 
 export default {
   ...modules

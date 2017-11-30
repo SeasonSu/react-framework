@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import list, {loadArticles} from '../mine-login/MineLoginActions'
+import list, {loadArticles} from './actions'
 
 export default combineReducers({list})
 
