@@ -1,6 +1,8 @@
 // 引入所有的reducer
-import mineLogin from '../views/mine-login/MineLoginReducer'
+import * as modules from '../views/**/*Reducer.js'
+
+console.log('modules', modules);
 
 export default {
-  mineLogin
+  ...modules
 }

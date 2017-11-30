@@ -9,6 +9,16 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   enforce: 'pre',
+      //   exclude: /(node_modules|bower_components)/,
+      //   use: [
+      //     {
+      //       loader: 'import-glob'
+      //     }
+      //   ]
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
@@ -35,10 +45,12 @@ module.exports = {
                       }
                     }
                   }
-                ]
+                ],
+                'import-glob'
               ],
               // 编译结果缓存到文件系统，提升编辑效率
-              cacheDirectory: true
+              // TODO：设置为true时，import-glob的文件无法更新
+              cacheDirectory: false
             }
           }
         ]
