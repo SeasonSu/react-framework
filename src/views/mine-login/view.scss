@@ -1,3 +1,7 @@
 .foo {
   color: red;
 }
+
+:global .gfoo {
+  background: blue;
+}

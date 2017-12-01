@@ -10,9 +10,7 @@ import './view.scss'
 })
 class View extends React.Component {
   render() {
-    return (
-      <div styleName='foo'>Login</div>
-    )
+    return (<div className='gfoo' styleName='foo'>Login</div>)
   }
 }
 

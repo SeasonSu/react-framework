@@ -1,21 +1,17 @@
 import React from 'react'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import immutable, {Map} from 'immutable'
-import Frame from '../layouts/Frame'
 import * as views from '../views/**/*view.jsx'
 
-let t = []
+let arr = []
 for (var key in views) {
-  let value = views[key]
-  t.push(<Route key={key} path={'/' + key} component={value}/>)
+  arr.push(<Route key={key} path={'/' + key} component={views[key]}/>)
 }
 
-const routes = browserHistory => (
-  <Router>
-    <Switch>
-      {t}
-    </Switch>
-  </Router>
-)
+const routes = browserHistory => (<Router>
+  <Switch>
+    {arr}
+  </Switch>
+</Router>)
 
 export default routes
