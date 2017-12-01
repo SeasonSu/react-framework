@@ -10,7 +10,8 @@ import Frame from './layouts/Frame'
 const store = configureStore()
 const history = syncHistoryWithStore(createBrowserHistory(), store)
 
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(
+  <Provider store={store}>
   <Frame>
     {routes(history)}
   </Frame>

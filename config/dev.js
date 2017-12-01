@@ -1,3 +1,3 @@
 export default {
-  apiUrl: '', // 接口地址
+  apiUrl : '', // 接口地址
 }

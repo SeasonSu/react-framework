@@ -9,7 +9,9 @@ import './view.scss'
 })
 class View extends React.Component {
   render() {
-    return (<div>Register</div>)
+    return (
+      <div>Register</div>
+    )
   }
 }
 
