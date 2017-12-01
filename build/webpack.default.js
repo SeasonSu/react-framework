@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const theme = require('../src/styles/theme.json')
 
 module.exports = {
   entry: './src/app.js',
@@ -9,16 +10,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   enforce: 'pre',
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: [
-      //     {
-      //       loader: 'import-glob'
-      //     }
-      //   ]
-      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
@@ -46,7 +37,14 @@ module.exports = {
                     }
                   }
                 ],
-                'import-glob'
+                'import-glob',
+                // 确保加载antd-mobile less 文件
+                [
+                  'import', {
+                    'libraryName': 'antd-mobile',
+                    'style': true
+                  }
+                ]
               ],
               // 编译结果缓存到文件系统，提升编辑效率
               // TODO：设置为true时，import-glob的文件无法更新
@@ -80,11 +78,37 @@ module.exports = {
             }
           }
         ]
+      }, {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader'
+          }, {
+            loader: 'less-loader',
+            options: {
+              modifyVars: theme
+            }
+          }
+        ]
+      }, {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader'
+          }
+        ]
+      }, {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss']
+    extensions: ['.js', '.jsx']
   },
   plugins: [new HtmlWebpackPlugin({template: 'src/index.html'})]
 }

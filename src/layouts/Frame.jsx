@@ -1,11 +1,12 @@
 import React from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import 'antd-mobile'
 
 class Frame extends React.Component {
   render() {
-    return (<MuiThemeProvider>
+    return (<div>
       {this.props.children}
-    </MuiThemeProvider>)
+    </div>)
   }
 }
 
