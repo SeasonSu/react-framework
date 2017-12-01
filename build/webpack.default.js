@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const theme = require('../src/styles/theme.json')
+const theme = require('../src/styles/theme')
 
 module.exports = {
   entry: './src/app.js',
