@@ -66,6 +66,8 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: (loader) => [
+                // scss中操作资源
+                // requrie('postcss-assets')(),
                 // 解决样式文件import路径问题
                 require('postcss-import')(),
                 // 添加-webkit等前缀
@@ -104,11 +106,21 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader'
+      }, {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.json']
   },
   plugins: [new HtmlWebpackPlugin({template: 'src/index.html'})]
 }
