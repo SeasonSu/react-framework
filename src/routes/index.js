@@ -7,10 +7,12 @@ for (var key in views) {
   arr.push(<Route key={key} path={'/' + key} component={views[key]}/>)
 }
 
-const routes = browserHistory => (<Router>
-  <Switch>
-    {arr}
-  </Switch>
-</Router>)
+const routes = browserHistory => (
+  <Router>
+    <Switch>
+      {arr}
+    </Switch>
+  </Router>
+)
 
 export default routes
