@@ -7,7 +7,7 @@ import rootReducer from './reducers'
 import rootSaga from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
-const finalCreateStore = compose(applyMiddleware(sagaMiddleware, ThunkMiddleware))(createStore)
+const finalCreateStore = compose(applyMiddleware(sagaMiddleware))(createStore)
 
 const reducer = combineReducers({
   ...rootReducer,

@@ -7,6 +7,7 @@ const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS'
 const LOAD_ARTICLES_ERROR = 'LOAD_ARTICLES_ERROR'
 
 export function loadArticles(date) {
+  console.log('actions_loadArticles');
   return {
     types: [
       LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_ERROR
@@ -15,7 +16,7 @@ export function loadArticles(date) {
   }
 }
 
-export default function PreviewList(state = initialState, action) {
+export default function list(state = initialState, action) {
   switch (action.type) {
     case LOAD_ARTICLES:
       {
@@ -39,6 +40,21 @@ export default function PreviewList(state = initialState, action) {
         }
       }
 
+    default:
+      return state
+  }
+}
+
+export function counter(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'INCREMENT_IF_ODD':
+      return (state % 2 !== 0)
+        ? state + 1
+        : state
+    case 'DECREMENT':
+      return state - 1
     default:
       return state
   }

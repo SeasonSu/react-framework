@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import './view.scss'
 
@@ -7,11 +7,9 @@ import './view.scss'
 }, dispatch => {
   return {}
 })
-class View extends React.Component {
+class View extends Component {
   render() {
-    return (
-      <div>Register</div>
-    )
+    return (<div>Register</div>)
   }
 }
 

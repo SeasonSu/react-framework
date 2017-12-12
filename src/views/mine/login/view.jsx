@@ -1,21 +1,32 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import NavBar from '../../../components/NavBar/NavBar'
 import './view.scss'
 import logo from '../../../assets/images/logo.png'
+import {actions} from './reducer'
+import {action1} from './actions.async'
 
 @connect(state => {
-  return {}
+  return {b: state.mineLogin.list, counter: state.mineLogin.counter}
 }, dispatch => {
-  return {counter: counter}
+  return {
+    // loadArticles: actions.loadArticles,
+    action1: function() {
+      dispatch({type: 'INCREMENT_ASYNC'})
+    }
+  }
 })
-class View extends React.Component {
+class View extends Component {
   render() {
-    this.state.counter()
+    const {action1} = this.props
+
+    // this.props.loadArticles()
+    // this.props.action1()
+    console.log(this.props.counter);
 
     return (<div className='gfoo'>
       <NavBar title='登录'/>
-      <img styleName='logo' src={logo}/>
+      <img styleName='logo' src={logo} onClick={() => action1()}/>
     </div>)
   }
 }
