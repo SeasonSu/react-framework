@@ -1,0 +1,9 @@
+const LOGIN = 'LOGIN'
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+const LOGIN_ERROR = 'LOGIN_ERROR'
+
+export {
+  LOGIN,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR
+}

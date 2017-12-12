@@ -7,7 +7,6 @@ const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS'
 const LOAD_ARTICLES_ERROR = 'LOAD_ARTICLES_ERROR'
 
 export function loadArticles(date) {
-  console.log('actions_loadArticles');
   return {
     types: [
       LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_ERROR
