@@ -1,3 +1,5 @@
-import mineLoginReducer from '../views/mine-login/MineLoginReducer'
+import * as modules from '../views/**/reducer.js'
 
-export default {mineLoginReducer}
+export default {
+  ...modules
+}

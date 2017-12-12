@@ -1,14 +1,18 @@
 import React from 'react'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import Frame from '../layouts/Frame'
-import MineLoginView from '../views/mine-login/MineLoginView'
-import MineRegisterView from '../views/mine-register/MineRegisterView'
+import * as views from '../views/**/*view.jsx'
 
-const routes = browserHistory => (<Router>
-  <Switch>
-    <Route path="/login" component={MineLoginView}/>
-    <Route path="/register" component={MineRegisterView}/>
-  </Switch>
-</Router>)
+let arr = []
+for (var key in views) {
+  arr.push(<Route key={key} path={'/' + key} component={views[key]}/>)
+}
+
+const routes = browserHistory => (
+  <Router>
+    <Switch>
+      {arr}
+    </Switch>
+  </Router>
+)
 
 export default routes
