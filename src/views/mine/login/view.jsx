@@ -22,9 +22,27 @@ class View extends Component {
   render() {
     const {action1} = this.props
 
-    console.log(this.props.cc);
+    return (<div className="m-login">
+      <div className="m-login-main">
+        <div className="m-login-main-left"></div>
+        <div className="m-login-main-right">
+          <div className="m-login-logo"></div>
+          <div className="m-login-welcome">
+            欢迎您，请登录!
+          </div>
+          <Form ref="form" formClassName="m-login-form">
+            <Form.Item label="" name="account" validateRules={[validationRules.require()]}>
+              <Input onKeyUp={this.handlekeyUp.bind(this)} className="m-login-input accounts" placeholder="请输入登录帐号"/>
+            </Form.Item>
 
-    return (<div className='gfoo'></div>)
+            <Form.Item label="" name="password" validateRules={[validationRules.require()]}>
+              <Input onKeyUp={this.handlekeyUp.bind(this)} type="password" className="m-login-input password" placeholder="请输入登录密码"/>
+            </Form.Item>
+          </Form>
+          <a className="m-login-loginbtn" onClick={this.handleLogin.bind(this)}>登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+        </div>
+      </div>
+    </div>)
   }
 }
 
